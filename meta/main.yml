@@ -3,6 +3,9 @@ galaxy_info:
   description: This role will install Lynis and run a scan on the target host.
   company: Innovaox
 
+  role_name: "lynisscan"
+  namespace: "farisc0de"
+
   license: MIT
 
   min_ansible_version: 2.1
