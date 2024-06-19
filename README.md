@@ -11,5 +11,5 @@ This role will install Lynis and run a scan on the target host. The results will
 ## How to use
 
 ```bash
-ansible-galaxy install lynisscan
+ansible-galaxy install farisc0de.lynisscan
 ```
