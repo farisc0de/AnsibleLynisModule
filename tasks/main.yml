@@ -1,5 +1,20 @@
 ---
 # tasks file for lynisscan
+- name: Ensure Lynis package is installed
+  become: true
+  become_method: sudo
+  apt:
+    name: lynis
+    state: present
+
+- name: Ensure Lynis service is up and running
+  become: true
+  become_method: sudo
+  service:
+    name: lynis
+    state: started
+    enabled: yes
+
 - name: Perform Lynis Audit
   become: true
   become_method: sudo
