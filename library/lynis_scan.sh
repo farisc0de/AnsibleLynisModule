@@ -20,12 +20,11 @@ function lynis_scan {
         return
     fi
     
-    lynis audit system --auditor "Ansible" > /tmp/lynis_scan.log
+    lynis audit system --auditor "Ansible" > $dest
     
     if [ $? -eq 0 ]; then
         changed=true
         msg="Lynis scan completed successfully"
-        contents=$(cat " /tmp/lynis_scan.log" 2>&1 | python -c 'import json,sys; print(json.dumps(sys.stdin.read()))')
     else
         changed=false
         msg="Lynis scan failed"
@@ -75,6 +74,6 @@ case $state in
     ;;
 esac
 
-printf '{"changed": %s, "msg": "%s", "contents": %s}' "$changed" "$msg" "$contents"
+printf '{"changed": %s, "msg": "%s"}' "$changed" "$msg"
 
 exit 0

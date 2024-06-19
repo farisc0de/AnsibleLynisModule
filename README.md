@@ -21,4 +21,5 @@ ansible-galaxy install farisc0de.lynisscan
 ```
 
 ## License
+
 MIT

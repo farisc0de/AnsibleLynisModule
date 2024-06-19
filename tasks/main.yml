@@ -20,6 +20,7 @@
   become_method: sudo
   lynis_scan:
     state: scan
+    dest: /tmp/lynis_scan.log
 
 - name: Fetch Lynis Scan Logs
   become: true
