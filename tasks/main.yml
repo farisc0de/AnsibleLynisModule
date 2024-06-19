@@ -20,3 +20,10 @@
   become_method: sudo
   lynis_scan:
     state: scan
+
+- name: Fetch Lynis Scan Logs
+  become: true
+  become_method: sudo
+  fetch:
+    src: /tmp/lynis_scan.log
+    dest: /tmp/fetched/lynis_scan.log
