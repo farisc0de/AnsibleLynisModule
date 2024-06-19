@@ -1,0 +1,7 @@
+---
+# tasks file for lynisscan
+- name: Perform Lynis Audit
+  become: true
+  become_method: sudo
+  lynis_scan:
+    state: scan

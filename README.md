@@ -1,22 +1,15 @@
-# AnsibleLynisModule
-an Ansible Module to perform a scan with Lynis
+# Lynis Scan Role
+
+This role will install Lynis and run a scan on the target host. The results will be saved to a file in the user's tmp directory.
+
+## Features
+
+- Installs Lynis
+- Runs a scan on the target host
+- Saves the results to a file in the user's tmp directory
 
 ## How to use
 
-1. Add the code to your Ansible library "/library"
-
-2. Execute it
-
-adhoc
 ```bash
-ANSIBLE_LIBRARY=./library ansible -m lynis_scan -a 'state=scan' localhost --ask-become-pass
-```
-
-playbook
-```yml
-- name: Perform Lynis Audit
-  become: true
-  become_method: sudo
-  lynis_scan:
-    state: scan
+ansible-galaxy install lynisscan
 ```

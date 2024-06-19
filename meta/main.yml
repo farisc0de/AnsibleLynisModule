@@ -1,0 +1,12 @@
+galaxy_info:
+  author: Faris AL-Otaibi
+  description: This role will install Lynis and run a scan on the target host.
+  company: Innovaox
+
+  license: MIT
+
+  min_ansible_version: 2.1
+
+  galaxy_tags: ["security", "devsecops"]
+
+dependencies: []
