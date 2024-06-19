@@ -21,6 +21,7 @@
   lynis_scan:
     state: scan
     dest: /tmp/lynis_scan.log
+    auditor: "Ansible"
 
 - name: Fetch Lynis Scan Logs
   become: true

@@ -20,7 +20,13 @@ function lynis_scan {
         return
     fi
     
-    lynis audit system --auditor "Ansible" > $dest
+    # Check if the auditor is provided
+    
+    if [ -z "$auditor" ]; then
+        auditor="Ansible"
+    fi
+    
+    lynis audit system --quiet --auditor $auditor > $dest
     
     if [ $? -eq 0 ]; then
         changed=true
